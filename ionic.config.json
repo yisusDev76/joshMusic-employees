@@ -1,0 +1,7 @@
+{
+  "name": "joshMusic-employees",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
