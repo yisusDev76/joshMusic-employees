@@ -1,13 +1,60 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>intro</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content scrollY="false">
+  <swiper-container
+    #swiper
+    (afterinit)="swiperReady()"
+    (slidechange)="swiperSlideChanged($event)"
+    [loop]="true"
+    [pagination]="true"
+    [zoom]="true"
+    >
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">intro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <!-- Slide 1 -->
+    <swiper-slide>
+      <ion-text color="light">
+        <div class="swiper-zoom-container">
+          <img src="https://i1.wp.com/ionicacademy.com/wp-content/uploads/2019/10/async-code-course.png">
+        </div>
+        <h1>Hey there!</h1>
+        <p>This is an epic app because...</p>
+        <ion-button (click)="next()" fill="outline" color="light">Next</ion-button>
+      </ion-text>
+    </swiper-slide>
+
+    <!-- Slide 2 -->
+    <swiper-slide>
+      <ion-text color="light">
+        <div class="swiper-zoom-container">
+          <img src="https://i1.wp.com/ionicacademy.com/wp-content/uploads/2019/10/async-code-course.png">
+        </div>
+        <h1>Hey there!</h1>
+        <p>This is an epic app because...</p>
+        <ion-button (click)="next()" fill="outline" color="light">Next</ion-button>
+      </ion-text>
+    </swiper-slide>
+
+    <!-- Slide 3 -->
+    <swiper-slide>
+      <ion-text color="light">
+        <div class="swiper-zoom-container">
+          <img src="https://i1.wp.com/ionicacademy.com/wp-content/uploads/2019/10/async-code-course.png">
+        </div>
+        <h1>Hey there!</h1>
+        <p>This is an epic app because...</p>
+        <ion-button (click)="next()" fill="outline" color="light">Next</ion-button>
+      </ion-text>
+    </swiper-slide>
+
+    <!-- Slide 4 -->
+    <swiper-slide>
+      <ion-text color="light">
+        <div class="swiper-zoom-container">
+          <img src="https://i1.wp.com/ionicacademy.com/wp-content/uploads/2020/06/ionic-everywhere-course.png">
+        </div>
+        <h1>It's Ionic!</h1>
+        <p>... it shows all the basics you need!</p>
+        <!-- <ion-button (click)="start()" fill="outline" color="light">Start</ion-button> -->
+      </ion-text>
+    </swiper-slide>
+
+  </swiper-container>
 </ion-content>

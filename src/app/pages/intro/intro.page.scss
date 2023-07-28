@@ -1,0 +1,21 @@
+ion-content {
+    --background: #0081ca;
+  }
+  
+  swiper-container {
+    height: 100%;
+    // --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #000000);
+    // --swiper-pagination-color: var(--ion-color-primary, #fff);
+    --swiper-pagination-bullet-inactive-color: #000000;
+  --swiper-pagination-color: #fff;
+  
+    width: 100%;
+  }
+  
+  swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
