@@ -5,6 +5,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import Swiper from 'swiper';
+import { Preferences } from '@capacitor/preferences';
+import { INTRO_KEY } from 'src/app/guards/intro.guard';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-intro',
@@ -19,7 +22,7 @@ export class IntroPage implements OnInit {
   swiperRef: ElementRef | undefined;
   swiper?:Swiper
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   swiperReady(){
     this.swiper = this.swiperRef?.nativeElement.swiper;
@@ -27,7 +30,7 @@ export class IntroPage implements OnInit {
 
   next() {
     if (this.swiperRef && this.swiperRef) {
-      console.log("DEBERIA DE PUTAS FUNCIONAR");
+      // Depurar porque en swiper 10 hay un error -> console.log("DEBERIA DE PUTAS FUNCIONAR");
       
       this.swiper!.slideNext();
     } else {
@@ -40,6 +43,17 @@ export class IntroPage implements OnInit {
 
   swiperSlideChanged(e: any) {
     console.log('changed: ', e);
+  }
+
+  async start() {
+    console.log("Se hizo click en start, por lo que deberiamos navegar al login");
+
+    try {
+      await Preferences.set({key:INTRO_KEY, value:'true'})
+      this.router.navigateByUrl('/login', { replaceUrl: true });
+    } catch (error) {
+      console.error('Error al guardar en Storage: ', error);
+    }
   }
 
 }
