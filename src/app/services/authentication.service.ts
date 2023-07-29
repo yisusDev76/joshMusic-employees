@@ -1,13 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, from, map, switchMap, tap } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { Preferences } from '@capacitor/preferences';
 export const TOKEN_KEY = 'my-token';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null as unknown as boolean);
+  isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject <boolean>(null as unknown as boolean);
   token = '';
 
   constructor(private http : HttpClient) {

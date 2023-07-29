@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-menu-toggle>
+    <ion-button expand="full">Toggle Menu</ion-button>
+  </ion-menu-toggle>
+
+  <ion-button expand="full" (click)="openMenu()">Open Menu</ion-button>
+  <ion-button expand="full" routerLink="/menu/second">Go to Second</ion-button>
+  <ion-button expand="full" (click)="logout()">Logout</ion-button>
+</ion-content>

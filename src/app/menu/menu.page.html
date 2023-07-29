@@ -1,13 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>menu</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- Inicia el componente Split Pane. Este componente permite una vista dividida entre el menú y el contenido principal.
+     El atributo contentId hace referencia al id del contenido principal, que es 'content' en este caso -->
+     <ion-split-pane contentId="content">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+      <!-- Aquí se inicia el componente de menú -->
+      <ion-menu contentId="content">
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list>
+            <ion-menu-toggle autoHide="false" *ngFor="let p of pages">
+              <ion-item [routerLink] = "p.url" routerDirection="root" [ngClass]="{'active-item': selected_path.startsWith(p.url)}">
+                {{p.title}}
+              </ion-item>
+            </ion-menu-toggle>
+    
+    
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+    
+      <ion-router-outlet id="content" main></ion-router-outlet>
+    
+    </ion-split-pane>
+    
