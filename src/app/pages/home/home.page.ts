@@ -24,6 +24,8 @@ export class HomePage {
  }
 
  ngOnInit() {
+  console.log("Home sweet home");
+  
  }
 
  openMenu() {
