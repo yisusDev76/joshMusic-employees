@@ -66,7 +66,7 @@ export class LoginPage implements OnInit {
       next: async (res) => {
         await loading.dismiss();
         this.failedAttempts = 0; // Restablece el contador de intentos fallidos
-        this.router.navigateByUrl('/menu', { replaceUrl: true });
+        this.router.navigateByUrl('/app', { replaceUrl: true });
       },
       error: async (res) => {
         this.failedAttempts++; // Incrementa el contador de intentos fallidos

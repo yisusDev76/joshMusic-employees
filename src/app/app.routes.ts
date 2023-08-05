@@ -13,7 +13,7 @@ export const routes: Routes = [
     canActivate:[IntroGuard,AutoLoginGuard]
   },
   {
-    path: 'menu',
+    path: 'app',
     loadComponent: () => import('./menu/menu.page').then( m => m.MenuPage),
     canActivate:[AuthGuard],
     children: [
@@ -33,7 +33,7 @@ export const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/menu/home',
+        redirectTo: '/app/home',
         pathMatch: 'full',
       },
     ],
