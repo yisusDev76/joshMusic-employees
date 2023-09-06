@@ -20,7 +20,7 @@ export class AutoLoginGuard {
       map(isAuthenticated => {
         if (isAuthenticated) {
           // console.log("Autologin funcionando");
-          return this.router.parseUrl('/menu');
+          return this.router.parseUrl('/app');
         } else {
           return true;
         }
