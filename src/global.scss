@@ -24,3 +24,21 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+/*Configuracion de la nueva fuente personalizada*/
+:root {
+    --ion-font-family: 'Encode Sans', sans-serif;
+  }
+  
+  body {
+    font-weight: 400;  // Regular
+  }
+  
+  .medium-font {
+    font-weight: 500;  // Medium
+  }
+  
+  .semi-bold-font {
+    font-weight: 600;  // Semi-Bold
+  }
+  
