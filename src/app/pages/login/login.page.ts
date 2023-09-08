@@ -112,6 +112,17 @@ export class LoginPage implements OnInit {
     }
   }
 
+  clearContent(inputId: string) {
+    const inputElement: any = document.getElementById(inputId);
+    if (inputElement) {
+      if(inputId === 'input_email') {
+        this.credentials.get('email')?.setValue('');
+      } else if(inputId === 'input_password') {
+        this.credentials.get('password')?.setValue('');
+      }
+    }
+  }
+  
   onKeyUp(event: KeyboardEvent) {
     const passwordInput = this.credentials.get('password');
 
