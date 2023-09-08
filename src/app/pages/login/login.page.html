@@ -16,7 +16,14 @@
   <form (ngSubmit)="login()" [formGroup]="credentials">
     <div class="input-group">
       <ion-item>
-        <ion-input type="email" placeholder="Usuario o correo electrónico" formControlName="email"></ion-input>
+        <ion-input id="input_email" type="email" placeholder="Usuario o correo electrónico" formControlName="email"></ion-input>
+        <ion-icon
+          *ngIf="credentials.get('email')?.value?.length > 0"  
+          class="icon-trash" 
+          slot="end" 
+          name="close-circle-sharp" 
+          (click)="clearContent('input_email')">
+      </ion-icon>
       </ion-item>
 
       <div *ngIf="(email?.dirty || email?.touched) && email?.errors" class="errors">
@@ -29,6 +36,14 @@
 
       <ion-item>
         <ion-input id="input_password" type="password" placeholder="Contraseña" formControlName="password" (keyup)="onKeyUp($event)"></ion-input>
+        <!-- Añadido el ícono para borrar contenido -->
+        <ion-icon
+          *ngIf="credentials.get('password')?.value?.length > 0"  
+          class="icon-trash" 
+          slot="end" 
+          name="close-circle-sharp" 
+          (click)="clearContent('input_password')">
+        </ion-icon>
         <ion-icon id="eyeCurrentPass" 
         class="icon-eye" 
         slot="end" 

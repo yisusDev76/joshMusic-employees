@@ -20,13 +20,7 @@ ion-content {
   // Extra large devices (large desktops)
   @media (min-width: 1280px) {
     --background: url('../../../assets/wallpapers/background-1280x1024.jpg') 0 0/100% 100% no-repeat;
-    --padding-top: 15%;
-  }
-
-  // Extra extra large devices (Full HD desktops)
-  @media (min-width: 1920px) {
-    --background: url('../../../assets/wallpapers/background-1080x1920.jpg') 0 0/100% 100% no-repeat;
-    --padding-top: 10%;
+    --padding-top: 19%;
   }
 }
 
